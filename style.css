@@ -1,0 +1,945 @@
+/* =========================================================
+   D JESVIN JOHANN - NEON RESUME
+   CSS STYLES
+========================================================= */
+
+
+/* =========================================================
+   1. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   2. NEON COLOR VARIABLES
+========================================================= */
+
+:root {
+
+    --blue: #00d9ff;
+
+    --green: #00ff88;
+
+    --pink: #ff2bd6;
+
+    --red: #ff365d;
+
+    --purple: #9b5cff;
+
+    --white: #edf7ff;
+
+    --muted: #a9bbca;
+
+    --dark: #03050b;
+
+    --card: rgba(8, 13, 25, 0.90);
+
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   3. BODY
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 217, 255, 0.14),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 43, 214, 0.13),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0, 255, 136, 0.09),
+            transparent 30%
+        ),
+
+        #03050b;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   4. BACKGROUND GRID
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   5. MAIN CONTAINER
+========================================================= */
+
+.container {
+
+    width: min(
+        calc(100% - 32px),
+        1050px
+    );
+
+    margin: auto;
+
+    padding: 45px 0 60px;
+}
+
+
+/* =========================================================
+   6. HERO SECTION
+========================================================= */
+
+.hero {
+
+    text-align: center;
+
+    padding: 35px 20px 45px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   7. PROFILE PHOTO
+========================================================= */
+
+.photo-wrap {
+
+    width: 180px;
+
+    height: 180px;
+
+    margin: 0 auto 22px;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--pink),
+            var(--green)
+        );
+
+    box-shadow:
+
+        0 0 15px var(--blue),
+
+        0 0 35px
+        rgba(255, 43, 214, 0.50),
+
+        0 0 60px
+        rgba(0, 255, 136, 0.25);
+
+    animation:
+        profileGlow 3s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+.photo-wrap img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 50%;
+
+    border: 4px solid #050812;
+}
+
+
+/* Photo animation */
+
+@keyframes profileGlow {
+
+    from {
+
+        filter: brightness(0.95);
+
+    }
+
+    to {
+
+        filter: brightness(1.15);
+
+    }
+}
+
+
+/* =========================================================
+   8. NAME
+========================================================= */
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            2.2rem,
+            7vw,
+            4.5rem
+        );
+
+    letter-spacing: 3px;
+
+    line-height: 1.05;
+
+    text-transform: uppercase;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--pink),
+            var(--green)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 25px
+        rgba(0, 217, 255, 0.18);
+}
+
+
+/* =========================================================
+   9. SUBTITLE
+========================================================= */
+
+.hero-subtitle {
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 1rem;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   10. CONTACT BUTTON AREA
+========================================================= */
+
+.contact-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   11. CONTACT BUTTON
+========================================================= */
+
+.contact-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 11px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        border-color 0.25s ease;
+}
+
+
+/* General hover */
+
+.contact-btn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 16px
+        rgba(0, 217, 255, 0.55);
+}
+
+
+/* GitHub */
+
+.contact-btn.github:hover {
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 16px
+        rgba(0, 255, 136, 0.55);
+}
+
+
+/* LinkedIn */
+
+.contact-btn.linkedin:hover {
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 16px
+        rgba(255, 43, 214, 0.55);
+}
+
+
+/* Email */
+
+.contact-btn.email:hover {
+
+    border-color: var(--red);
+
+    box-shadow:
+        0 0 16px
+        rgba(255, 54, 93, 0.55);
+}
+
+
+/* =========================================================
+   12. CONTACT ICON
+========================================================= */
+
+.icon {
+
+    width: 22px;
+
+    height: 22px;
+
+    display: inline-grid;
+
+    place-items: center;
+
+    font-weight: 800;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   13. RESUME SECTIONS
+========================================================= */
+
+.resume-sections {
+
+    display: grid;
+
+    gap: 17px;
+}
+
+
+/* =========================================================
+   14. ACCORDION BOX
+========================================================= */
+
+.accordion {
+
+    border: 1px solid var(--accent);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    background: var(--card);
+
+    box-shadow:
+        0 0 9px
+        color-mix(
+            in srgb,
+            var(--accent) 28%,
+            transparent
+        );
+
+    transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   15. HOVER ENLARGEMENT
+========================================================= */
+
+.accordion:hover {
+
+    transform: scale(1.025);
+
+    box-shadow:
+
+        0 0 13px
+        color-mix(
+            in srgb,
+            var(--accent) 70%,
+            transparent
+        ),
+
+        0 0 32px
+        color-mix(
+            in srgb,
+            var(--accent) 28%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   16. ACCORDION HEADING
+========================================================= */
+
+.accordion summary {
+
+    list-style: none;
+
+    cursor: pointer;
+
+    padding: 21px 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: var(--accent);
+
+    text-transform: uppercase;
+
+    user-select: none;
+}
+
+
+/* Remove default arrow */
+
+.accordion summary::-webkit-details-marker {
+
+    display: none;
+}
+
+
+/* =========================================================
+   17. PLUS / MINUS ICON
+========================================================= */
+
+.accordion summary::after {
+
+    content: "+";
+
+    font-size: 1.7rem;
+
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* When opened */
+
+.accordion[open] summary::after {
+
+    content: "−";
+
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   18. ACCORDION CONTENT
+========================================================= */
+
+.accordion-content {
+
+    padding:
+        0
+        24px
+        24px;
+
+    border-top:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--accent) 28%,
+            transparent
+        );
+
+    color: #dbe7ef;
+
+    line-height: 1.75;
+
+    animation:
+        reveal 0.28s ease;
+}
+
+
+/* =========================================================
+   19. OPENING ANIMATION
+========================================================= */
+
+@keyframes reveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-7px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+/* =========================================================
+   20. CONTENT ITEMS
+========================================================= */
+
+.item {
+
+    margin-top: 19px;
+
+    padding: 17px;
+
+    border-left:
+        3px solid
+        var(--accent);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border-radius:
+        0
+        12px
+        12px
+        0;
+}
+
+
+.item:first-child {
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   21. ITEM HEADINGS
+========================================================= */
+
+.item h3 {
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+
+    margin-bottom: 5px;
+}
+
+
+.item h4 {
+
+    color: var(--accent);
+
+    margin-bottom: 7px;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   22. SMALL TEXT
+========================================================= */
+
+.item small {
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   23. LISTS
+========================================================= */
+
+ul {
+
+    padding-left: 20px;
+
+    margin-top: 9px;
+}
+
+
+li {
+
+    margin: 6px 0;
+}
+
+
+/* =========================================================
+   24. SKILL CHIPS
+========================================================= */
+
+.chips {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 14px;
+}
+
+
+.chip {
+
+    padding:
+        7px
+        11px;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--accent) 60%,
+            transparent
+        );
+
+    border-radius: 999px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--accent) 7%,
+            transparent
+        );
+
+    color: #f5fbff;
+
+    font-size: 0.88rem;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Skill hover */
+
+.chip:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 12px
+        color-mix(
+            in srgb,
+            var(--accent) 55%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   25. ONGOING STATUS
+========================================================= */
+
+.status {
+
+    display: inline-block;
+
+    margin-left: 8px;
+
+    padding:
+        3px
+        9px;
+
+    border-radius: 999px;
+
+    color: var(--green);
+
+    border:
+        1px solid
+        var(--green);
+
+    font-size: 0.72rem;
+
+    vertical-align: middle;
+
+    box-shadow:
+        0 0 8px
+        rgba(0, 255, 136, 0.35);
+}
+
+
+/* =========================================================
+   26. PROJECT TECHNOLOGIES
+========================================================= */
+
+.project-tech {
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   27. LINKS
+========================================================= */
+
+.link {
+
+    color: var(--accent);
+
+    text-decoration: none;
+}
+
+
+.link:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   28. FOOTER
+========================================================= */
+
+.footer {
+
+    text-align: center;
+
+    margin-top: 45px;
+
+    color: #6e8494;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   29. MOBILE RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+
+        width:
+            min(
+                calc(100% - 20px),
+                1050px
+            );
+
+        padding-top: 25px;
+    }
+
+
+    .hero {
+
+        padding-top: 25px;
+    }
+
+
+    .photo-wrap {
+
+        width: 145px;
+
+        height: 145px;
+    }
+
+
+    .hero h1 {
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .contact-links {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .contact-btn {
+
+        justify-content: center;
+    }
+
+
+    .accordion summary {
+
+        padding: 18px;
+
+        font-size: 0.92rem;
+    }
+
+
+    .accordion-content {
+
+        padding:
+            0
+            18px
+            20px;
+    }
+
+
+    /*
+       On mobile, keep the enlargement effect
+       very small so the page doesn't jump.
+    */
+
+    .accordion:hover {
+
+        transform: scale(1.01);
+    }
+
+}
+
+
+/* =========================================================
+   30. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
